@@ -1,0 +1,28 @@
+//34. Flattens a nested array to a
+//1-d array. It's a recursive solution
+//and will loop through the array as
+//many times as the depth of the most
+//deeply nested array.
+function steamrollArray(arr) {
+  var len = arr.length;
+  var copy = [];
+  var inside_len = 0;
+  var has_arr = true;//whether there's still a nested array left
+  for(var q = 0; q < len; ++q) {
+    if(!Array.isArray(arr[q])) {
+      copy.push(arr[q]);
+      has_arr = false;
+    } else {
+      inside_len = arr[q].length;
+      for(var r = 0; r < inside_len; ++r) {
+        copy.push(arr[q][r]);
+        has_arr = true;
+      }
+    }
+  }
+  if(has_arr) {
+    return steamrollArray(copy);
+  } else {
+    return copy;
+  }
+}
