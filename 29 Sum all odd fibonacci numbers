@@ -1,0 +1,15 @@
+//29. Return sum of all odd fibonacci
+//numbers up to num.
+function sumFibs(num) {
+  var sum = 0;
+  var last = 1;
+  var current = 1;
+  for(var temp = 0; temp <= num; temp = last + current) {
+    last = current;
+    current = temp;
+    if(temp % 2 === 1) {
+      sum += temp;
+    }
+  }
+  return sum;
+}
