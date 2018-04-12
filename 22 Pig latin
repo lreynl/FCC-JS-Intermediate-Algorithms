@@ -1,0 +1,14 @@
+//22. Pig Latin translator
+//Turns a sentance into pig Latin
+function translatePigLatin(str) {
+  var arr = str.split(" ");
+  var vowel = /[aeiou]/g;
+  arr.forEach(function(word, i) {
+    if(word.charAt(0).match(vowel)) { arr[i] += "way"; } //starts with a vowel
+    else if(!word.charAt(0).match(vowel) && !word.charAt(1).match(vowel)) { //starts with 2 cosonants
+      arr[i] = word.slice(2) + word.slice(0, 2) + "ay";
+    }
+    else { arr[i] = word.slice(1) + word.charAt(0) + "ay"; } //starts with one consonant
+  });
+  return arr.join('');
+}
