@@ -1,0 +1,27 @@
+//27. Convert HTML entities
+//Convert special chars &, <, >, ", ', to
+//HTML code.
+function convert(str) {
+  var arr = str.split("");
+  arr.forEach(function(element, index, array) {
+    switch (element) {
+      case '&':
+        array[index] = '&amp;';
+        break;
+      case '<':
+        array[index] = '&lt;';
+        break;
+      case '>':
+        array[index] = '&gt;';
+        break;
+      case '"':
+        array[index] = '&quot;';
+        break;
+      case "'":
+        array[index] = '&apos;';
+        break;
+    }
+  });
+  str = arr.join("");
+  return str;
+}
