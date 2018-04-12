@@ -1,0 +1,32 @@
+//20. Take an array of objects
+//and a key:value. Return an array of
+//those objects that contain that
+//key:value pair. 
+//It seems like there should be a
+//simpler way to do it.
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // What's in a name?
+  var flag = true;
+  var len = collection.length;
+  for(var i = 0; i < len; i++) {
+    for(var prop in source) {
+      console.log(prop);
+      if(collection[i].hasOwnProperty(prop)) {
+        if(collection[i][prop] === source[prop]) {
+          flag = true;
+        } else {
+          flag = false;
+          break;
+        }
+      } else {
+        flag = false;
+        break;
+      }
+    }
+    if(flag) {
+      arr.push(collection[i]);
+    }
+  }
+  return arr;
+}
