@@ -1,0 +1,59 @@
+//19. Convert a number to Roman numerals
+//A long-winded solution using string
+//concatenation.
+function convertToRoman(num) {
+  var out = "";
+  while(num >= 1000) {
+    out += "M";
+    num -= 1000;
+  }
+  if(num >= 900 && num < 1000) {
+    out += "CM";
+    num -= 900;
+  }
+  while(num >= 500) {
+    out += "D";
+    num -= 500;
+  }
+  if(num >= 400 && num < 500) {
+    out += "CD";
+    num -= 400;
+  }
+  while(num >= 100) {
+    out += "C";
+    num -= 100;
+  }
+  if(num >= 90 && num < 100) {
+    out += "XC";
+    num -= 90;
+  }
+  while(num >= 50) {
+    out += "L";
+    num -= 50;
+  }
+  if(num >= 40 && num < 50) {
+    out += "XL";
+    num -= 40;
+  }
+  while(num >= 10) {
+    out += "X";
+    num -= 10;
+  }
+  if(num === 9) {
+    out +="IX";
+    num -= 9;
+  }
+  if(num >= 5) {
+    out += "V";
+    num -= 5;
+  }
+  if(num === 4) {
+    out += "IV";
+    num -= 4;
+  }
+  while(num > 0) {
+    out += "I";
+    num--;
+  }
+  return out;
+}
