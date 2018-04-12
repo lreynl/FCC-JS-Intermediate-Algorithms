@@ -1,0 +1,6 @@
+//25. Return true if object is a
+//boolean or false if not.
+function boo(bool) {
+  if(typeof bool === 'boolean') return true;
+  else return false;
+}
