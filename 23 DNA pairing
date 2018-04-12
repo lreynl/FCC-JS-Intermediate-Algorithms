@@ -1,0 +1,14 @@
+//23. DNA pairing
+//Accepts a string of dna sequence
+//letters and returns an array with
+//them paired.
+function pair(str) {
+  var arr = str.split("");
+  arr.forEach(function(element, index, array) {
+    if(element == 'A') array[index] = ["A", "T"];
+    if(element == 'T') array[index] = ["T", "A"];
+    if(element == 'C') array[index] = ["C", "G"];
+    if(element == 'G') array[index] = ["G", "C"];
+  });
+  return arr;
+}
