@@ -1,0 +1,23 @@
+//18. Return the symmetric difference of
+//two arrays of numbers (elements in one
+//array or the other, but not both).
+function diff(arr1, arr2) {
+  if(arr1 === []) return arr2;
+  if(arr2 === []) return arr1;
+  var temp = arr1.concat(arr2);
+  temp.sort();
+  var newArr = [];
+  var currentLen = 0;
+  do {
+    currentLen = temp.length;
+    if(temp[0] === temp[1]) {
+      temp.shift();
+      temp.shift();
+    }
+    else {
+      newArr.push(temp[0]);
+      temp.shift();
+    }
+  } while (currentLen > 0);
+  return newArr;
+}
