@@ -1,0 +1,20 @@
+//30. Return sum of all primes up to num.
+function sumPrimes(num) {
+  if(num === 0 || num === 1) return 1;
+  var sqrt = 0;
+  var isPrime = true;
+  var sum = 0;
+  for(var toTest = 2; toTest <= num; toTest++) {
+    sqrt = Math.sqrt(toTest);
+    isPrime = true;
+    for(var div = 2; div <= sqrt && isPrime === true; div++) {
+      if(toTest % div === 0) {
+        isPrime = false;
+      }
+    }
+    if(isPrime) {
+      sum += toTest;
+    }
+  }
+  return sum;
+}
