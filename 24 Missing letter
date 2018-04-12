@@ -1,0 +1,21 @@
+//24. Missing letters
+//Given a range of letters from
+//the alphabet, return the missing one.
+function fearNotLetter(str) {
+  var arr = str.split("");
+  var len = arr.length;
+  var missing;
+  if(len <= 1)
+    return missing;
+  var current = "";
+  var last = "";
+  for(var i = 1; i < len; i++) {
+    last = arr[i - 1];
+    current = arr[i];
+    if(current.charCodeAt() !== last.charCodeAt() + 1) {
+      var charCode = last.charCodeAt() + 1;
+      missing = String.fromCharCode(charCode);
+    }
+  }
+  return missing;
+}
