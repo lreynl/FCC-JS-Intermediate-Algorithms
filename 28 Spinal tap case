@@ -1,0 +1,23 @@
+//28. Convert a string to spinal case
+function spinalCase(str) {
+  var len = str.length;
+  var replace = /[_ ]/g;
+  str = str.replace(replace, '-');
+  for(var i = 1; i < len; i++) {
+    if(isLower(str.charAt(i - 1)) && isUpper(str.charAt(i))) {
+      str = str.slice(0, i) + '-' + str.slice(i);
+    }
+  }
+  str = str.toLowerCase();
+  return str;
+}
+
+function isUpper(char) {
+  if(char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90) return true;
+  return false;
+}
+
+function isLower(char) {
+  if(char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) return true;
+  return false;
+}
