@@ -1,0 +1,20 @@
+//21. Accepts a string, a word to
+//search for and a word to replace
+//it with. Preserves capitalization.
+function myReplace(str, before, after) {
+  var arr = str.split(" ");
+  var len = arr.length;
+  //arr.forEach(function(word) {
+  for(var i = 0; i < len; i++) {
+    if(arr[i].toLowerCase() === before.toLowerCase()) {//if word matches
+      if(before.charAt(0) === before.charAt(0).toUpperCase()) {//if original is capitalized
+        after = after.charAt(0).toUpperCase() + after.slice(1);
+      } else {
+        after = after.toLowerCase();
+      }
+      arr[i] = after;
+    }
+  }
+  str = arr.join(" ");
+  return str;
+}
