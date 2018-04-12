@@ -1,0 +1,12 @@
+//32. Accepts an array and a function.
+//Returns the element that passes the
+//test defined by the function.
+function findElement(arr, func) {
+  var len = arr.length;
+  for(var i = 0; i < len; ++i) {
+    if(func(arr[i])) {
+      return arr[i];
+    }
+  }
+  return undefined;
+}
