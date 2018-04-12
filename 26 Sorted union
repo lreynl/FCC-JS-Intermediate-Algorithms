@@ -1,0 +1,20 @@
+//26. Sorted union
+//Take several arrays of numbers and
+//concatenate them so that the result
+//has no duplicates.
+function unite(arr1, arr2, arr3) {
+  var argNum = arguments.length;
+  var squished = [];
+  var result = [];
+  var len = 0;
+  for(var i = 0; i < argNum; i++) {
+    squished = squished.concat(arguments[i]);
+  }
+  len = squished.length;
+  for(i = 0; i < len; i++) {
+    if(result.includes(squished[i]) === false) {
+      result.push(squished[i]);
+    }
+  }
+  return result;
+}
