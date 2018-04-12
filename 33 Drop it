@@ -1,0 +1,10 @@
+//33. Delete elements from the beginning
+//of the array that fail the test given
+//by the function. Return the array when
+//the test passes.
+function dropElements(arr, func) {
+  while(!func(arr[0])) {
+    arr.shift();
+  }
+  return arr;
+}
