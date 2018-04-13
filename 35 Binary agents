@@ -1,0 +1,11 @@
+//35. Take a string of binary numbers
+//and return the characters they represent.
+function binaryAgent(str) {
+  var arr = str.split(" ");
+  var copy = [];
+  var len = arr.length;
+  arr.forEach(function(elem, i) {
+    arr[i] = String.fromCharCode(parseInt(Number(elem), 2));
+  });
+  return arr.join("");
+}
