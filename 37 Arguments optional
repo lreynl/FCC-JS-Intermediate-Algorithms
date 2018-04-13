@@ -1,0 +1,27 @@
+//37. Returns the sum if two arguments
+//provided; returns a function if one
+//argument.
+function addTogether() {
+  var len = arguments.length;
+  if(len < 1) return undefined;
+  //aruments doesn't have forEach...
+  for(var i = 0; i < len; ++i) {
+    if(typeof(arguments[i]) != 'number') return undefined;
+  }
+  //if one argument, return a function
+  //that sums its argument with the
+  //argument that the function was made with
+  var oneArg = arguments[0];
+  if(len == 1) return function() {
+    if(typeof arguments[0] != 'number') {
+      return undefined;
+    } else {
+      return (oneArg + arguments[0]);
+    }
+  };
+  //if two arguments, return the sum
+  if(len == 2) {
+    return arguments[0] + arguments[1];
+  }
+  return undefined;
+}
