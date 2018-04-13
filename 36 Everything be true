@@ -1,0 +1,21 @@
+//36. Everything be true
+//Take an array of objects and a key.
+//If the value for the key in every
+//object is 'true' or 'female', return
+//true.
+function truthCheck(collection, pre) {
+  var len = collection.length;
+  var ret = false;
+  for(var i = 0; i < len; ++i) {
+    if(collection[i].hasOwnProperty(pre)) {
+      if(collection[i][pre] === true || collection[i][pre] == "female" || collection[i][pre] == "yes") {
+        ret = true;
+      } else {
+        ret = false;
+      }
+    } else {
+      return false;
+    }
+  }
+  return ret;
+}
